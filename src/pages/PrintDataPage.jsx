@@ -26,6 +26,7 @@ const PrintDataPage = () => {
   const [zip, setZip] = useState("");
   const [email, setEmail] = useState("");
   const [imgUrl, setImgUrl] = useState("");
+  const [agreetc,setAgreetc] = useState(false);
 
   // Change handlers for InputField`s
   const handleFirstNameChange = (event) => {
@@ -52,49 +53,58 @@ const PrintDataPage = () => {
     setEmail(event.target.value);
   };
 
+  const handleCheckBox = () => {
+    setAgreetc(!agreetc);
+   
+  }
+  
   const submitPrintForm = () => {
     console.log(imageUrl);
 
     // Current date and time
-    const today = new Date();
-    const date =
-      today.getFullYear() +
-      "-" +
-      (today.getMonth() + 1) +
-      "-" +
-      today.getDate();
-    const time =
-      today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-    const dateTime = date + " " + time;
+    if(agreetc) {
+      const today = new Date();
+      const date =
+        today.getFullYear() +
+        "-" +
+        (today.getMonth() + 1) +
+        "-" +
+        today.getDate();
+      const time =
+        today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+      const dateTime = date + " " + time;
 
-    // get downloadUrl from local storage
+      // get downloadUrl from local storage
 
-    // change ImgUrl: imgUrl to DownloadUrl: downloadUrl
-    // To write in Google Sheets
-    const newRow = {
-      FirstName: firstName,
-      LastName: lastName,
-      Address: address,
-      City: city,
-      ZIP: zip,
-      Email: email,
-      DateTime: dateTime,
-      ImgUrl: localStorage.getItem("imageUrl"),
-    };
-    if (firstName && lastName && address && city && zip && email) {
-      const reqBody = {
-        postcardData: newRow,
+      // change ImgUrl: imgUrl to DownloadUrl: downloadUrl
+      // To write in Google Sheets
+      const newRow = {
+        FirstName: firstName,
+        LastName: lastName,
+        Address: address,
+        City: city,
+        ZIP: zip,
+        Email: email,
+        DateTime: dateTime,
+        ImgUrl: localStorage.getItem("imageUrl"),
       };
+      if (firstName && lastName && address && city && zip && email) {
+        const reqBody = {
+          postcardData: newRow,
+        };
 
-      axios
-        .post(`http://165.232.112.117:8000/addrecord`, reqBody)
-        .then((response) => {
-          console.log(response);
-        });
+        axios
+          .post(`http://165.232.112.117:8000/addrecord`, reqBody)
+          .then((response) => {
+            console.log(response);
+          });
 
-      history.push("/success");
+        history.push("/success");
+      } else {
+        alert("Field can not be empty 🙃");
+      }
     } else {
-      alert("Field can not be empty 🙃");
+      alert("Please Agree Term And Condition To Continue 🙃");
     }
   };
 
@@ -151,11 +161,28 @@ const PrintDataPage = () => {
                 onChange={handleEmailChange}
               />
             </div>
+            
+            <div className="print-data-page-double-row">
+              <div class="container">
+                <div class="round">
+                  <input type="checkbox" id="agreetandc" name="agreetandc" checked={agreetc} onChange={() => handleCheckBox()}/>
+                  <label for="checkbox"></label>
+                </div>
+                <label className="conditionspan" for="agreetandc" >I agree to the terms and conditions of processing personal data*</label>
+              </div>
+            </div>  
+            <div className="print-data-page-double-row">
+              <span className="conditionspan">By clicking submit below, you consent to allow Global Message Service to store and process the personal information entered above to provide you the content requested.</span>          
+            </div>
+            
+
             <div className="print-data-page-cta-button">
               <CTAButton text={page.submit} onClick={() => submitPrintForm()} />
             </div>
           </div>
         </div>
+
+        
         <div className="print-data-page-footer">
           <Footer />
         </div>
