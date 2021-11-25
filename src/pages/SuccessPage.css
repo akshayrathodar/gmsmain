@@ -1,0 +1,21 @@
+.success-page-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 0 10%;
+  height: 40vh;
+}
+
+.success-page-text {
+  margin-top: 3vh;
+  height: 95px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.success-page-footer {
+  position: absolute;
+  bottom: 50px;
+  left: 10%;
+}

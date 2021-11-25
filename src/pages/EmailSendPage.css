@@ -1,0 +1,64 @@
+.email-send-body {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    z-index: 6;
+}
+
+.email-send-main {
+    display: flex;
+    padding: 0 10%;
+    /* Does not work, fix it */
+    max-width: 1500px; 
+}
+
+.email-send-title {
+    /* background-color:azure; */
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 320px;
+
+}
+
+.email-send-form {
+    display: flex;
+    flex-direction: column;
+    flex: 2;
+    align-items: center;
+
+    height: 500px;
+
+    justify-content: space-between;
+
+    min-width: 940px;
+    max-width: 940px;
+
+}
+
+.email-send-double-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 76%;
+
+}
+
+.email-send-single-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 76%; 
+}
+
+.email-send-footer {
+    position: absolute;
+    bottom: 50px;
+    left: 10%;
+}
+
+.email-send-cta-button {
+    margin-top: 70px;
+    width: 76%; 
+}

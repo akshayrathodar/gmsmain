@@ -1,0 +1,27 @@
+.icon {
+  width: 76px;
+  height: 114px;
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.share-cta {
+  font-family: SuisseInt-Bold;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 16px;
+  color: #56b763;
+  margin-top: 15px;
+}
+
+.share-option {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-right: 20px;
+  cursor: pointer;
+}

@@ -1,0 +1,37 @@
+.share-page-body {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 6;
+}
+
+.share-page-main {
+  display: flex;
+  padding: 0 10%;
+}
+
+.share-page-title {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.share-page-options {
+  display: flex;
+  flex-direction: row;
+}
+
+.share-page-drawing {
+  width: 600px;
+  height: 450px;
+  background: #ffffff;
+  border: 1px solid #7d8985;
+  box-sizing: border-box;
+}
+
+.share-page-footer {
+  position: absolute;
+  bottom: 50px;
+  left: 10%;
+}

@@ -1,0 +1,41 @@
+.text-area-field-body {
+  height: 300px;
+  width: 100%;
+  background: #f3fff8;
+  display: flex;
+  align-items: center;
+}
+
+.text-area-field-input {
+  font-family: SuisseInt-Regular;
+  width: 100%;
+  height: 90%;
+  background: #f3fff8;
+  border-radius: 25px;
+  border: 2px solid rgb(189, 189, 189);
+  padding: 15px;  
+  margin-bottom: 20px;
+}
+
+/* Placeholder color styling */
+::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  color: #000000;
+}
+::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #000000;
+}
+:-ms-input-placeholder {
+  /* IE 10+ */
+  color: #000000;
+}
+:-moz-placeholder {
+  /* Firefox 18- */
+  color: #000000;
+}
+
+::placeholder {
+  color: gray;
+  opacity: 1; /* Firefox */
+}

@@ -1,0 +1,22 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2% 2% 2% 10%;
+  margin: 0 auto;
+}
+
+.lang-swithcer {
+  display: flex;
+  flex-direction: row;
+}
+
+.lang {
+  font-family: SuisseInt-Book, serif;
+  font-style: normal;
+  font-size: 14px;
+  border: none;
+  background: none;
+  cursor: pointer;
+}

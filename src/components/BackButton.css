@@ -1,0 +1,14 @@
+.back-arrow {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+  cursor: pointer;
+  /* or 150% */
+
+  letter-spacing: 0.15px;
+
+  /* GMS green */
+
+  color: #56b763;
+}

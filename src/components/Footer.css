@@ -1,0 +1,10 @@
+.footer {
+  font-family: SuisseInt-Bold, serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 0.7rem;
+  letter-spacing: 2px;
+  color: #202322;
+  position: fixed;
+  bottom: 10vh;
+}
